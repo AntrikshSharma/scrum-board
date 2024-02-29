@@ -1,0 +1,41 @@
+<div class = "info-container"> 
+    <div class = "accent"></div>
+    <div class = "info-box">
+        <div class = "header">
+            <input type = "text" class = "heading form-control" value="{{task.title}}" [disabled] = "!edit" [(ngModel)]="newTitle">
+            <div class = "date">{{task.date}}</div>
+        </div>
+        <button class = "btn form-control btn-secondary edit" (click) = "editTask()">EDIT TASK</button>
+        <input type= "text" class = "form-control description" value="{{task.description}}" [disabled] = "!edit" [(ngModel)]="newDescription">
+        <div class = "users">
+            <div class = "user" *ngFor="let u of task.users">{{u}}</div>
+        </div>
+        
+        <div class = "status-header">Status:</div>
+        <select [(ngModel)] = "status" class="form-control status" [disabled] = "!edit" [(ngModel)]="newStatus">
+            <option value="NEW" >NEW</option>
+            <option value="IN-PROGRESS" >IN-PROGRESS</option>
+            <option value="COMPLETED" >COMPLETED</option>
+            <option value="BLOCKED" >BLOCKED</option>
+        </select>
+        
+        <div class = "comments">
+            @if(task.comments.length > 0) {
+                <div class = "comment" *ngFor="let c of task.comments">
+                    <div class = "user">{{c.user}}</div>
+                    <div class = "text">{{c.comment}}</div>
+                    <div class = "date">{{c.date}}</div>
+                </div>
+            } @else {
+                <div class = "no-comments">No Comments. Add One</div>
+            }
+        </div>
+        <div class = "addComment">
+            <input type = "text" class = "form-control" placeholder = "Add Comment" [(ngModel)]="comment">
+            <button class = "btn btn-primary form-control" (click)="addComment()">Add</button>
+        </div>
+        <div *ngIf="edit">
+            <button class = "btn form-control editBtn" (click) = "updateTask()">UPDATE TASK</button>
+        </div>
+
+</div>

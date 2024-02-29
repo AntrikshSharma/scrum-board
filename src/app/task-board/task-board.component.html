@@ -1,0 +1,43 @@
+<div class="row taskBoard">
+    <div class="section col" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'NEW')">
+      <div class="column">
+        <div class="column-header section-title">New
+          <button class = "newTaskBtn" (click)="openAddTask('NEW')">+</button>
+        </div>
+        <div class="tasks" id="todo" >
+          <app-task draggable="true" *ngFor="let t of newTasks" [task] = "t" (dragstart)="onDragStart(t)" (click) = "openInfo(t)"></app-task>
+        </div>
+      </div>
+    </div>
+    <div class="section col" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'IN-PROGRESS')">
+      <div class="column">
+        <div class="column-header section-title">In Progress
+          <button class = "newTaskBtn" (click)="openAddTask('IN-PROGRESS')">+</button>
+        </div>
+        <div class="tasks" id="in-progress" >
+          <app-task draggable="true" *ngFor="let t of progressTasks" [task] = "t" (dragstart)="onDragStart(t)" (click) = "openInfo(t)"></app-task>
+        </div>
+      </div>
+    </div>
+    <div class="section col" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'COMPLETED')">
+      <div class="column">
+        <div class="column-header section-title">Completed
+          <button class = "newTaskBtn" (click)="openAddTask('COMPLETED')">+</button>
+        </div>
+        <div class="tasks" id="done">
+          <app-task draggable="true" *ngFor="let t of completedTasks" [task] = "t" (dragstart)="onDragStart(t)" (click) = "openInfo(t)"></app-task>
+        </div>
+      </div>
+    </div>
+    <div class="section col" (dragover)="onDragOver($event)"  (drop)="onDrop($event, 'BLOCKED')">
+      <div class="column">
+        <div class="column-header section-title">Blocked
+          <button class = "newTaskBtn" (click)="openAddTask('BLOCKED')">+</button>
+        </div>
+        <div class="tasks" id="done">
+          <app-task draggable="true" *ngFor="let t of blockedTasks" [task] = "t" (dragstart)="onDragStart(t)" (click) = "openInfo(t)"></app-task>
+          
+        </div>
+      </div>
+    </div>
+  </div>

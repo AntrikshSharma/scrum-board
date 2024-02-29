@@ -1,0 +1,14 @@
+<div class = "card">
+    <div class = "thumbnail">
+        <span class = "thumbnail-text">{{project.title[0]}}</span>
+    </div>
+    
+    <div class = "content">
+        <div class = "title">{{project.title}}</div>
+        <div class = "description">{{project.description}}</div>
+        <div class = "managers">
+            {{project.managers.join(' | ').toUpperCase()}}
+        </div>
+
+    </div>
+</div>

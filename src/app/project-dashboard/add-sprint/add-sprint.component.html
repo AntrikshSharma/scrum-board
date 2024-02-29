@@ -1,0 +1,22 @@
+<div class = "form-container"> 
+    <div class = "accent"></div>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+    <div class = "form-box">
+        <div class = "header">
+            <div class = "heading">Create New Sprint</div>
+            <div class = "managerinfo"></div>
+        </div>
+        <form (ngSubmit)="createSprint()" class ="form">
+            <label for="title">Sprint Title: *</label>
+            <input name = "title"class = "form-control"  type = "text" placeholder = "Sprint Title" [(ngModel)] = "title">
+            <label for="description">Enter Description: *</label>
+            <textarea name = "description" class = "form-control" placeholder="Add Description" [(ngModel)] = "description"></textarea>
+            <label for="start_date">Enter Start Date: *</label>
+            <input name = "start_date" class = "form-control" type = "date" placeholder = "Start Date" [(ngModel)] = "startDate">
+            <label for="end_date">Enter End Date: *</label>
+            <input name = "end_date" class = "form-control" type = "date" placeholder = "End Date" [(ngModel)] = "endDate">
+            <button type = "submit" class = "form-control btn btn-primary">Create</button>
+        </form>
+    </div>
+</div>
+

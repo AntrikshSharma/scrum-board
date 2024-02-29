@@ -1,0 +1,21 @@
+<div class = "accent"
+[ngClass]="{
+    'new': task.status === 'NEW',
+    'in-progress': task.status === 'IN-PROGRESS',
+    'completed': task.status === 'COMPLETED',
+    'blocked': task.status === 'BLOCKED'
+
+}"></div>
+<div class = "task">
+    <div class = "header">
+        <div class = "title">{{task.title}}</div>
+        <div class = "date">{{task.date}}</div>
+    </div>
+    <div class = "description">{{task.description}}</div>
+    <div class = "users">
+        <div class = "user" *ngFor="let user of task.users">
+            {{user}}
+        </div>
+    </div>
+
+</div>

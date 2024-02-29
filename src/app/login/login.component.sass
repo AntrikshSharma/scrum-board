@@ -1,0 +1,91 @@
+.login-page 
+    
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+
+.bg 
+    
+    height: 100%
+    width: 100%
+    position: absolute
+    z-index: 0
+
+    .white-bg
+        height: 50%
+        width: 100%
+        background-color: #fff
+
+    .image-bg
+
+        height: 50%
+        background-image: url("../../assets/login-page/login-page-bg.svg")
+        background-size: cover
+        background-repeat: no-repeat
+
+.login-form-container
+
+    position: relative
+    z-index: 1
+    width: 20%
+    height: max-content
+    border-radius: 1rem
+    opacity: 1
+    background-color: #fff
+    box-shadow: 0 0 10rem 0.5rem rgba(0, 0, 0, 0.3)
+
+        
+
+    .accent 
+        height: 0.7rem
+        width: 100%
+        border-radius: 1rem 1rem 0 0
+        background-color: #FF5A4E
+        margin-bottom: 1rem
+    
+    .login-form
+        width: 100%
+        padding: 0.2rem 2.5rem 1.2rem 2.5rem
+    
+        .login-heading 
+            font-size: 1.8rem
+            font-weight: 300
+            margin-top: 0.5em
+            margin-bottom: 2rem
+            color: #333
+        .form 
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+
+            input 
+                margin-bottom: 1.2rem
+
+            button 
+                margin-top: 1.2rem
+                margin-bottom: 1.2rem
+                background-color: #FF5A4E
+            
+            label 
+                margin: 0.2rem 0
+                align-self: flex-start
+                color: #373737
+                font-weight: 400
+
+    @media screen and ( max-width: 1920px )
+        width: 30%
+    
+    @media screen and ( max-width: 1200px )
+        width: 40%
+        
+    @media screen and ( max-width: 720px )
+        width: 60%
+        
+
+    @media screen and ( max-width: 600px )
+        width: 70%
+        
+    
+

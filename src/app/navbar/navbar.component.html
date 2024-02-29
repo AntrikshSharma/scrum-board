@@ -1,0 +1,11 @@
+@if(!loggedIn){
+  <nav class="navbar sticky-top bg-body-tertiary">
+    <div class="container-fluid">
+      <a [routerLink] = '[""]' class="navbar-brand">
+        <span class ="team">SCRUM</span><span class = "management">Board</span></a>
+    </div>
+  </nav>
+}
+@else {
+  <app-nav-dashboard></app-nav-dashboard>
+}

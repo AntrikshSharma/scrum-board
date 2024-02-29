@@ -1,0 +1,30 @@
+<div class = "form-container"> 
+    <div class = "close">
+        <button class = "btn btn-danger closeBtn" (click) = "emitClose()">X</button>
+    </div>
+    <div class = "accent"></div>
+    <div class = "form-box">
+        <div class = "header">
+            <div class = "heading">Create New Project</div>
+            <div class = "managerinfo">{{getUser()}}</div>
+        </div>
+        <form (ngSubmit)="createProject()" class ="form">
+            <label for="title">Enter Project Title: *</label>
+            <input name = "title"class = "form-control"  type = "text" placeholder = "Project Title" [(ngModel)] = "title">
+            <label for="description">Enter Description: *</label>
+            <textarea name = "description" class = "form-control" placeholder="Add Description" [(ngModel)] = "description"></textarea>
+            <label for = "adduser">Add Team Memebers</label>
+            <input name = "adduser" class = "form-control searchBox" placeholder="Search For A User "
+            (input) = "searchUser()" [(ngModel)] = "searchQuery">
+            
+            <div *ngIf = "searchResult.length > 0" class = "search-result">
+                <div *ngFor="let user of searchResult" class = "searchItem" (click)="addUser(user)">{{user.name}}</div>
+            </div>
+            <div *ngIf = "selectedUsers.length > 0" class = "selected-users">
+                <div *ngFor="let username of selectedUsers" class = "selectedItem" (click)="removeUser(user)">{{username}}</div>
+            </div>
+            <button type = "submit" class = "form-control btn btn-primary" (click)="createProject()">Create</button>
+        </form>
+    </div>
+</div>
+

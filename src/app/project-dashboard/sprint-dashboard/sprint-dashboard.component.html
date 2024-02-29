@@ -1,0 +1,22 @@
+<div *ngIf="!noSprints" class ="sprint-dashboard">
+ 
+      <div class = "row">
+        <div class = "list-group">
+          <button *ngFor = "let sprintID of getIDs(sprints)" type = "button" class = "srint-btn list-group-item list-group-item-action" (click) = "selectSprint(sprintID)">
+            {{getSprintTitle(sprintID)}}
+          </button>
+        </div>
+      </div>
+      <div class = "row taskBoard">
+        <router-outlet></router-outlet>
+      </div>
+
+</div>
+
+
+<div *ngIf = "noSprints">
+  <div class = "no-sprints">
+    No Sprints Available. Add a sprint or ask your manager to create
+    one to get started.
+  </div>
+</div>

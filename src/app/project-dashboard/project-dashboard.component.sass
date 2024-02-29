@@ -1,0 +1,160 @@
+.dashboard 
+    min-height: 90vh
+    height: max-content    
+  
+
+.header 
+    width:100%
+    background-image: url('../../assets/dashboard/dashboard-bg.svg')
+    background-size: cover
+    padding: 1.5rem 0
+    background-repeat: no-repeat
+    background-position: center
+    display: flex
+    margin-bottom: 1rem
+
+    .header-title
+        padding:0 9rem
+        width:70%
+        height: auto
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: flex-start
+        color: white 
+        font-weight: 600
+        font-size: 2rem
+
+        @media screen and (max-width: 1500px)
+            padding: 0 7rem
+            font-size: 1.5rem
+
+        @media screen and (max-width: 900px)
+            padding: 0 6rem
+            font-size: 1.5rem
+
+        @media screen and (max-width: 600px)
+            padding: 0 2rem
+            font-size: 1.2rem
+    
+        
+        .project-desc 
+            font-weight: 300
+            font-size: 1rem
+            padding: 0.5rem 0
+            color: white
+            text-align: justify
+
+            @media screen and (max-width: 900px)
+                font-size: 0.9rem
+
+            @media screen and (max-width: 600px)
+                font-size: 0.8rem
+        
+    .header-manager
+        color: white 
+        font-weight: 200
+        padding: 0 0 1rem 10rem
+        font-size: 1.3rem
+        justify-self: flex-end
+        align-items: flex-end
+
+        @media screen and (max-width: 900px)
+            padding: 0 1rem 0 5rem
+            font-size: 1rem
+
+        @media screen and (max-width: 600px)
+            padding: 0 0 1rem 1rem
+            font-size: 0.8rem
+
+    
+.managerPanel
+
+    display: flex
+    flex-direction: column
+    width: 100%
+    margin: 0.2rem 0 0 0
+
+    
+    button
+        
+        width: 80%
+        border-radius: 0.3rem
+        border:none
+        font-size: 0.8rem
+        background: #373737c2
+        color: white
+        
+        &:hover
+            transition: all 0.5s ease
+            opacity: 1
+            transform: scale(1.02)
+            box-shadow: 0 0 0.5rem 0.1rem rgba(99, 99, 99, 0.25)
+        
+        &:focus
+            transform: scale(1.01)
+            box-shadow: 0 0 0.5rem 0.1rem rgba(99, 99, 99, 0.25)
+
+        @media screen and (max-width: 1310px)
+            width: 15%
+        
+        @media screen and (max-width: 900px)
+            width: 20%
+            font-size: 0.7rem
+        
+        @media screen and (max-width: 700px)
+            width: 25%
+            font-size: 0.6rem
+
+    .collapsePanel
+        
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+        width: 80%
+        padding: 0
+        
+        
+        button
+            width: 100%
+            
+            border: none
+            border-radius: 0
+            transition: all 0.5s ease
+            background-color: #00000010
+            color: white !important
+
+            &:hover
+                transform: scale(1.005)
+                box-shadow: 0 0 0.5rem 0.05rem rgba(99, 99, 99, 0.25)
+                background-color: #ffffff9a
+                color: #373737 !important
+            &:focus
+                transform: scale(1.005)
+                box-shadow: 0 0 0.5rem 0.05rem rgba(99, 99, 99, 0.25)
+                background-color: #ffffff9a
+                
+
+
+    
+    
+
+        // .addSprintBtn
+        //     background-color: #FF5A4E
+        //     color: white !important
+
+        // .editBtn
+        //     background-color: #373737
+        //     color: white !important
+
+        // .editMemberBtn
+        //     background-color: #30578F
+        //     color: white !important
+
+        // .editMgrBtn
+        //     background-color: #30578F
+        //     color: white !important
+
+
+

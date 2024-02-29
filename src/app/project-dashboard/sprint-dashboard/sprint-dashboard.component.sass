@@ -1,0 +1,59 @@
+.sprint-dashboard
+    display: flex
+    flex-direction: column
+    padding: 0.5rem 7rem
+
+    @media screen and (max-width: 1310px)
+        padding: 0.5rem 5rem
+
+    @media screen and (max-width: 900px)
+        padding: 0.5rem 3rem
+
+    @media screen and (max-width: 700px)
+        padding: 0.5rem 1.5rem
+
+    .col-2
+        padding:0
+
+    .list-group
+        display: flex
+        flex-direction: row
+
+    .list-group-item
+
+        font-size: 1rem
+        width: max-content
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        padding: 0.5rem 1rem
+        white-space: wrap
+        flex-wrap: wrap
+        transition: 0.3s ease all
+
+        &:focus
+            background-color: #30A0B6!important
+            transform: scale(1.01)
+            color: white !important
+    
+
+.no-sprints
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 1.2rem
+    font-weight: 500
+    color: #373737
+    padding: 0.5rem 7rem
+    width: 100%
+    height: 70vh
+
+    @media screen and (max-width: 1310px)
+        padding: 0.5rem 5rem
+
+    @media screen and (max-width: 900px)
+        padding: 0.5rem 3rem
+
+    @media screen and (max-width: 700px)
+        padding: 0.5rem 1.5rem
+

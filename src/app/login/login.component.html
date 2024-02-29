@@ -1,0 +1,19 @@
+<div class = "login-page">
+    <div class = "bg">
+        <div class = "image-bg"></div>
+        <div class = "white-bg"></div>
+    </div>
+    <div class = "login-form-container">
+        <div class = "accent"></div>
+        <div class = "login-form">
+            <div class = "login-heading">Login To Your Account</div>
+            <form (ngSubmit)="login()" class ="form">
+                <label for="username">Enter Username:</label>
+                <input name = "username"class = "form-control"  type = "username" placeholder = "Username" [(ngModel)]="username" name = "username" required>
+                <label for="username">Enter Password:</label>
+                <input name = "password" class = "form-control" type = "password" placeholder="Password" [(ngModel)]="password" name = "password" required>
+                <button type = "submit" class = "form-control btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

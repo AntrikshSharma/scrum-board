@@ -1,0 +1,40 @@
+<div class = "info-container"> 
+    <div class = "accent"></div>
+    <div class = "info-box">
+        <div class = "header">
+            
+            <div class = "heading">Add New Task</div>
+            <div class = "date">{{taskDate}}</div>
+        </div>
+        <div class ="addTitle">
+            <label for="title">Enter Task Title: *</label>
+            <input type = "text" class = "heading form-control" [(ngModel)]="taskTitle" name="title">
+        </div>
+        
+        <div class = "description">
+            <label for="description">Enter Description: *</label>
+            <input class= "form-control" [(ngModel)]="taskDescription" name="description">
+        </div>
+        <div class = "status-header">Status:</div>
+        <select [(ngModel)] = "status" class="form-control status">
+            <option value="NEW" >NEW</option>
+            <option value="IN-PROGRESS" >IN-PROGRESS</option>
+            <option value="COMPLETED" >COMPLETED</option>
+            <option value="BLOCKED" >BLOCKED</option>
+        </select>
+        
+        <div class = "addUsers">
+            <label for = "adduser">Add Team Memebers</label>
+            <input name = "adduser" class = "form-control searchBox" placeholder="Search For A User "
+            (input) = "searchUser()" [(ngModel)] = "searchQuery">
+            <div *ngIf = "searchResult.length > 0" class = "search-result">
+                <div *ngFor="let user of searchResult" class = "searchItem" (click)="addUser(user)">{{user}}</div>
+            </div>
+            <div *ngIf = "selectedUsers.length > 0" class = "selected-users">
+                <div *ngFor="let username of selectedUsers" class = "selectedItem" (click)="removeUser(username)">{{username}}</div>
+            </div>
+        </div>
+
+        <button class = "form-control btn addBtn" (click)="addTask()">Add Task</button>
+</div>
+

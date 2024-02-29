@@ -1,0 +1,32 @@
+<div class="dashboard">
+  <div class="header">
+    <span class="header-title">
+      <span class = "project-name">
+        {{ project.title }}
+      </span>
+      <span class="project-desc">
+        {{ project.description }}
+    </span>
+    <div *ngIf="project.managers.includes(user.id)" class="managerPanel">
+      <button class="btn btn-primary form-control" type="button" (click) = "collapse.toggle()" [attr.aria-expanded]="!isCollapsed">
+        Admin Panel
+      </button>
+      <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" style = "width: 100%;">
+        <div class = "card-body collapsePanel">
+          <button class="btn form-control addSprintBtn" (click) = "openAddSprint()">ADD SPRINT</button>
+          <button class="btn form-control editMemberBtn">EDIT MEMBERS</button>
+          <button class="btn form-control editMgrBtn">EDIT MANAGERS</button>
+          <button class="btn form-control editBtn">EDIT PROJECT</button>
+        </div>
+      </div>
+    </div>
+    </span>
+    <span class="header-manager">
+      Managers:<br />
+      {{ project.managers.join(", ").toUpperCase() }}
+    </span>
+  </div>
+  
+  <app-sprint-dashboard [projectId]="project_id"></app-sprint-dashboard>
+
+</div>

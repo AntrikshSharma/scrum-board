@@ -1,0 +1,33 @@
+<ng-template createForm></ng-template>
+
+<div class = "dashboard">
+    <div class = "header">
+        <span class = "header-text">
+    
+            Dashboard | {{user.name}}
+        </span>
+    </div>
+
+    <div class = "projects-container">
+        <div class ="projects-header">
+            <span class = "projects-header-text">
+                My Projects
+            </span>
+            <button class = "btn projects-header-button" (click) = "openModal()">
+                Create Project
+            </button>   
+        </div>
+        <hr class = "horizontal">
+
+        <div class = "project-cards">
+            <app-project-card *ngFor = "let _project of projects | keyvalue" 
+            [project]="_project.value" (click)="openProject(_project.key)"
+            ></app-project-card>
+        </div>
+
+        
+        <button class = "createBig"  (click) = "openModal()">Create New Project</button>
+    </div>
+    
+    
+</div>
